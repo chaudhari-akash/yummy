@@ -53,11 +53,8 @@ public class CustomerService {
 
     public Customer updateCustomer(@Valid CustomerRequest request) {
         Customer customer = getCustomer(request.email());
-//        customer.setCity(request.city());
-//        customer.setAddress(request.address());
         customer.setFirstName(request.firstName());
         customer.setLastName(request.lastName());
-//        customer.setPincode(request.pinCode());
         repo.save(customer);
         return customer;
     }
